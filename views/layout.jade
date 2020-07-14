@@ -1,0 +1,51 @@
+!!! 5
+html
+ head
+  title= title
+  link(href='stylesheets/normalize.css', rel='stylesheet')
+  link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+  link(rel='stylesheet', href='/stylesheets/styles.css')
+ body
+  div.container
+   div.row.span12(style="margin-bottom: 0px")
+    div.page-header
+     h2.centered-header The Rapid Quiz Game <small>30 seconds to answer!</small>
+     block navbar
+      div.centered-pills
+       ul.nav.nav-pills
+        li.active
+         a(href="/") Home
+        li
+         a(href="play") Play the Game
+        li.dropdown
+         a.dropdown-toggle(data-toggle="dropdown", href="#") Quiz Manager
+          b.caret
+         ul.dropdown-menu
+          li
+           a(href="/quizManager/createQuestion") Create Question
+          li
+           a(href="/quizManager/viewQuestions") View Questions
+         
+    block contentHolder
+     block content
+      div.span7.well
+     div.span4.pull-right
+      div.well
+       h4.centered-header Top Scores
+       table.table
+        thead
+         tr
+          th #
+          th Name
+          th Date
+        tbody
+         tr
+          td
+          td
+          td
+    script(type='text/javascript', src='http://code.jquery.com/jquery-latest.js')
+    script(type='text/javascript', src='http://twitter.github.com/bootstrap/assets/js/bootstrap.js');
+    script(type='text/javascript', src='/javascripts/index.js');
+   hr
+   footer.centered-header
+    p Created by <a href="https://www.twitter.com/iamshanedoyle">iamshanedoyle</a> for fun!

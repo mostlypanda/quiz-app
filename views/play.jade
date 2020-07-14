@@ -1,0 +1,31 @@
+extends layout
+
+block navbar
+ div.centered-pills
+  ul.nav.nav-pills
+   li
+    a(href="/") Home
+   li.active
+    a(href="play") Play the Game
+   li.dropdown
+    a.dropdown-toggle(data-toggle="dropdown", href="#") Quiz Manager
+     b.caret
+    ul.dropdown-menu
+     li
+      a(href="/quizManager/createQuestion") Create Question
+     li
+      a(href="/quizManager/viewQuestions") View Questions
+    
+block content
+ div.span7.well
+  h4(style="text-align: center") Your Score: 0
+  div.progress.progress-striped.active
+   div.bar(style="width:100%", name="bar")
+  form
+   legend= question
+   input.btn.btn-large.btn-block(type="button",name="answer1",value=answer1)
+   input.btn.btn-large.btn-block(type="button",name="answer2",value=answer2)
+   input.btn.btn-large.btn-block(type="button",name="answer3",value=answer3)
+   input.btn.btn-large.btn-block(type="button",name="answer4",value=answer4)
+  div.alert.alert-info
+   <b>Hurry Up! </b> The clock is running down.
