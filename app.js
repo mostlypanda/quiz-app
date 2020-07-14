@@ -11,8 +11,14 @@ app.set("view engine", "jade");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
-app.use(session({secret: "crazysecretstuff", logged: false, originalRoute: ""}));
 app.use(express.static(__dirname + "/public"));
+app.use(session({
+    secret: 'mkshere',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false, maxAge  : new Date(Date.now() + (60 * 1000 * 30)) }
+  }))
+
 
 mongoose.Promise=global.Promise;
 mongoose.connect("mongodb+srv://test:test@cluster0-bi1rv.mongodb.net/quiz-bank?retryWrites=true&w=majority",
