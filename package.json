@@ -20,6 +20,7 @@
     "express": "^4.17.1",
     "jade": "^1.11.0",
     "mongodb": "^3.5.9",
-    "mongoose": "^5.9.24"
+    "mongoose": "^5.9.24",
+    "nodemon": "^2.0.4"
   }
 }
