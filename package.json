@@ -1,0 +1,25 @@
+{
+  "name": "quizapp",
+  "version": "1.0.0",
+  "description": "A quiz app developed in node.js and mongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mostlypanda/quiz-app.git"
+  },
+  "author": "sarthak mittal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mostlypanda/quiz-app/issues"
+  },
+  "homepage": "https://github.com/mostlypanda/quiz-app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jade": "^1.11.0",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.24"
+  }
+}
