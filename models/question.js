@@ -1,16 +1,11 @@
-module.exports = function(mongoose) {
-	var Schema = mongoose.Schema;
-	var ObjectId = Schema.ObjectId;
+const mongoose=require('mongoose');
 
-	var schema = new Schema({
-		title: String,
+const question=mongoose.Schema({
+	title: String,
 		answers: {
 			correct: String,
 			incorrect: [String] },
 		entered: {type: Date, default: Date.now}
-	});
+});
 
-	this.model = mongoose.model('Question', schema);
-
-	return this;
-};
+module.exports=mongoose.model('Question',question);

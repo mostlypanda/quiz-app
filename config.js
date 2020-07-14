@@ -1,29 +1,16 @@
+const bodyParser=require('body-parser');
+const cookieParser=require('cookie-parser');
 module.exports = function(app, express, mongoose){
     var config = this;
   
-    app.configure(function(){
-      app.set("views", __dirname + "/views");
-      app.set("view engine", "jade");
-      app.use(express.bodyParser());
-      app.use(express.cookieParser());
-      app.use(express.session({secret: "crazysecretstuff", logged: false, originalRoute: ""}));
-      app.use(express.methodOverride());
-      app.use(app.router);
-      app.use(express.static(__dirname + "/public"));
-    });
     
-    // Development Configuration
-    app.configure("development", function(){
+      
+    
+
       app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-      app.mongoose.connect("mongodb+srv://test:test@cluster0-bi1rv.mongodb.net/quiz-app?retryWrites=true&w=majority");
-    });
-    
-    // Production Configuration
-    app.configure("production", function(){
+      app.mongoose.connect("mongodb+srv://test:test@cluster0-bi1rv.mongodb.net/quiz-bank?retryWrites=true&w=majority");
       app.use(express.errorHandler());
   
-     // app.mongoose.connect("mongodb://flame.mongohq.com:27087/quizBank");
-    });
     
     app.use(NotFoundErrorHandler);
     app.use(ErrorHandler);
